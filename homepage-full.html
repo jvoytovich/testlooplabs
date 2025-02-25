@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestLoop Labs | Product Management Consultancy & AI Innovation</title>
+    <meta name="description" content="TestLoop Labs combines data-driven product strategy with AI innovation to help companies build better products. Product management consultancy and AI tools for growth.">
+    <meta name="keywords" content="product management, product-led growth, product strategy, AI tools, product consulting, AB testing, behavioral science">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background-color: transparent;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(to right, #f8f9fa, #e9f2ff);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .hero-image {
+            width: 500px;
+            height: auto;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 60px;
+        }
+        
+        .about-text {
+            max-width: 700px;
+        }
+        
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .about-image {
+            min-width: 350px;
+            max-width: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .client-result {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: rgba(16, 185, 129, 0.1);
+            border-radius: 6px;
+            font-size: 14px;
+            color: var(--dark);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .client-result strong {
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* AI Tools Section */
+        .ai-tools {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .tools-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .tool-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-img {
+            width: 100%;
+            height: 200px;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tool-content {
+            padding: 25px;
+        }
+        
+        .tool-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .tool-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .tool-features {
+            margin: 20px 0;
+        }
+
+        .tool-features ul {
+            list-style-type: none;
+        }
+
+        .tool-features li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .tool-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        .tool-users {
+            font-size: 14px;
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .author-info p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        .cta-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .cta-row {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border-radius: 6px;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 15px;
+            border-radius: 6px;
+            border: none;
+            font-size: 16px;
+            background-color: white;
+        }
+
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                margin-bottom: 40px;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image {
+                margin: 0 auto;
+            }
+
+            .cta-row {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Test<span>Loop</span>Labs</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="tools.html">AI Tools</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Where Data-Driven Product Strategy Meets AI Innovation</h1>
+                    <p>With 15+ years of experience guiding product teams at companies like Spotify, Airbnb, and Shopify, TestLoop Labs delivers proven product management strategies while pushing the boundaries of AI to solve complex product challenges.</p>
+                    <div class="hero-buttons">
+                        <a href="services.html" class="btn btn-primary">Transform Your Product Strategy</a>
+                        <a href="tools.html" class="btn btn-secondary">Explore Our AI Tools</a>
+                    </div>
+                </div>
+                <img src="/api/placeholder/600/400" alt="TestLoop Labs" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About TestLoop Labs</h2>
+                    <p>TestLoop Labs bridges the gap between strategic product management and cutting-edge technology. Founded by Alex Chen, former Director of Product at Spotify and AI research contributor at OpenAI, we combine deep product expertise with practical AI implementation to help companies build products users love.</p>
+                    <p>Our dual approach means we not only consult on best practices, but also build innovative tools that demonstrate these principles in action. This hands-on approach ensures our strategies are always grounded in technical reality.</p>
+                </div>
+                <img src="/api/placeholder/400/300" alt="About TestLoop Labs" class="about-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Product Management Consultancy</h2>
+                <p>Strategic services based on proven methodologies implemented at top technology companies</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Product-Led Growth</h3>
+                    <p>We've helped 20+ SaaS companies transition from sales-led to product-led growth, resulting in an average 63% increase in user acquisition and 42% improvement in retention rates. Our proprietary PLG Framework focuses on creating activation loops that turn users into advocates.</p>
+                    <div class="client-result">
+                        <strong>Client Result:</strong> Helped FinanceFlow reduce CAC by 52% while increasing conversion by 38% through our 8-week PLG transformation program.
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧪</div>
+                    <h3>A/B Testing & Experimentation</h3>
+                    <p>Our structured experimentation approach has generated over $40M in incremental revenue for clients through methodical testing programs. We don't just run tests—we build experimentation capabilities within your organization.</p>
+                    <div class="client-result">
+                        <strong>Client Result:</strong> Implemented an experimentation program for TravelNow that identified a $2.3M annual revenue opportunity through checkout flow optimization.
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👤</div>
+                    <h3>User Research & Personas</h3>
+                    <p>Our behavioral research techniques go beyond surface-level demographics to uncover the psychological triggers that drive user behavior. We've conducted over 500 in-depth user interviews across 12 industries.</p>
+                    <div class="client-result">
+                        <strong>Client Result:</strong> Created a persona framework for MediaStream that increased feature adoption by 47% by aligning product development with core user motivations.
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Behavioral Science</h3>
+                    <p>We apply proven psychological principles to product design, creating interfaces that align with how humans actually make decisions. Our choice architecture framework has improved conversion rates by an average of 35% across client implementations.</p>
+                    <div class="client-result">
+                        <strong>Client Result:</strong> Redesigned WealthApp's onboarding experience using behavioral science principles, increasing completion rates from 32% to 67%.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Tools Section -->
+    <section class="ai-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>AI Exploration Projects</h2>
+                <p>Innovative tools that demonstrate our product principles in action</p>
+            </div>
+            <div class="tools-showcase">
+                <div class="tool-card">
+                    <div class="tool-img">
+                        <img src="/api/placeholder/400/200" alt="Snip Checker">
+                    </div>
+                    <div class="tool-content">
+                        <h3>Snip Checker</h3>
+                        <p>Unlike standard diff tools, Snip Checker doesn't just show what changed—it explains why it matters. Integrated with GPT-4, our tool identifies logical changes, security implications, and performance impacts, making code reviews 3x faster.</p>
+                        <div class="tool-users">
+                            Used by engineering teams at Atlassian, MongoDB, and Vercel to improve collaboration between developers and product managers.
+                        </div>
+                        <div class="tool-features">
+                            <ul>
+                                <li>Semantic understanding of code changes</li>
+                                <li>AI-generated explanations in plain English</li>
+                                <li>Security and performance impact assessments</li>
+                                <li>One-click sharing for collaboration</li>
+                            </ul>
+                        </div>
+                        <a href="tools/snip-checker.html" class="btn btn-primary">Try It Now</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-img">
+                        <img src="/api/placeholder/400/200" alt="User Flow Analyzer">
+                    </div>
+                    <div class="tool-content">
+                        <h3>User Flow Analyzer</h3>
+                        <p>Automatically analyze user journeys through your product to identify drop-off points and optimization opportunities. Uses machine learning to cluster similar user behaviors and identify patterns that human analysis might miss.</p>
+                        <div class="tool-features">
+                            <ul>
+                                <li>Automatic funnel visualization</li>
+                                <li>Drop-off point identification</li>
+                                <li>Behavioral pattern clustering</li>
+                                <li>Optimization recommendations</li>
+                            </ul>
+                        </div>
+                        <a href="tools/user-flow-analyzer.html" class="btn btn-secondary">Join Waitlist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Success Stories</h2>
+                <p>Hear from leaders who have transformed their products with our help</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Alex's approach to product-led growth completely transformed how we think about user acquisition. His strategies helped us reduce CAC by 47% while accelerating our growth rate. What sets TestLoop apart is how they combine strategic guidance with practical implementation support."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>VP of Product, SaaSify</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The Snip Checker tool has become an essential part of our development workflow. Our engineering and product teams now speak the same language when discussing code changes, cutting our review cycles in half and dramatically improving cross-functional collaboration."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>CTO, DataStream</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The behavioral science insights we gained from TestLoop's consulting completely changed how we approach our user experience. By implementing their framework, we saw a 28% increase in trial-to-paid conversion and a 43% improvement in retention metrics."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Amanda Rodriguez</h4>
+                            <p>CPO, EdTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to build products users can't live without?</h2>
+            <p>Whether you need strategic guidance or hands-on implementation support, our data-driven approach delivers measurable results. Schedule a free 30-minute product strategy session today.</p>
+            <form class="cta-form">
+                <div class="cta-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="cta-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Company" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" required>
+                            <option value="" disabled selected>Primary Challenge</option>
+                            <option value="growth">User Acquisition & Growth</option>
+                            <option value="retention">User Retention</option>
+                            <option value="conversion">Conversion Optimization</option>
+                            <option value="product-strategy">Product Strategy</option>
+                            <option value="experimentation">A/B Testing Program</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn cta-button">Schedule Strategy Session</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TestLoop Labs</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tools.html">AI Tools</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services/product-led-growth.html">Product-Led Growth</a></li>
+                        <li><a href="services/ab-testing.html">A/B Testing</a></li>
+                        <li><a href="services/user-personas.html">User Personas</a></li>
+                        <li><a href="services/behavioral-science.html">Behavioral Science</a></li>
+                        <li><a href="services/agile-development.html">Agile Development</a></li>
+                        <li><a href="services/funnel-optimization.html">Funnel Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>AI Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="tools/snip-checker.html">Snip Checker</a></li>
+                        <li><a href="tools/user-flow-analyzer.html">User Flow Analyzer</a></li>
+                        <li><a href="contact.html">Request a Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://linkedin.com/company/testlooplabs" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://twitter.com/testlooplabs" target="_blank">Twitter</a></li>
+                        <li><a href="https://github.com/testlooplabs" target="_blank">GitHub</a></li>
+                        <li><a href="newsletter.html">Email Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TestLoop Labs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

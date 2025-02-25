@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact TestLoop Labs | Product Management Consultancy & AI Tools</title>
+    <meta name="description" content="Get in touch with TestLoop Labs for product management consultancy services or to learn more about our AI tools. Schedule a free consultation today.">
+    <meta name="keywords" content="contact TestLoop Labs, product management consulting, AI tools, schedule consultation">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background-color: transparent;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 100px 0 80px;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 60px;
+        }
+        
+        .contact-form-wrapper {
+            flex: 1;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+        }
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            font-size: 16px;
+            background-color: white;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            font-size: 16px;
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .form-check-input {
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        
+        .form-check-label {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .info-item {
+            margin-bottom: 30px;
+        }
+        
+        .info-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .info-item p {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+        
+        .info-item ul {
+            list-style: none;
+        }
+        
+        .info-item li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        .info-item a {
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+        
+        .info-item a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .faq-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .faq-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .faq-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .contact-form-wrapper, .contact-info {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Test<span>Loop</span>Labs</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="tools.html">AI Tools</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Let's discuss how we can help you build better products</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <div class="section-title">
+                        <h2>Get in Touch</h2>
+                        <p>Schedule a free consultation or send us a message</p>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I'm interested in</label>
+                            <select id="interest" class="form-select" required>
+                                <option value="" disabled selected>Select your interest</option>
+                                <option value="product-led-growth">Product-Led Growth Consulting</option>
+                                <option value="ab-testing">A/B Testing & Experimentation</option>
+                                <option value="user-research">User Research & Personas</option>
+                                <option value="behavioral-science">Behavioral Science Application</option>
+                                <option value="funnel-optimization">Funnel Optimization</option>
+                                <option value="product-strategy">Product Strategy</option>
+                                <option value="snip-checker">Snip Checker Tool</option>
+                                <option value="user-flow-analyzer">User Flow Analyzer (Coming Soon)</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-textarea" required></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter" class="form-check-input">
+                            <label for="newsletter" class="form-check-label">Subscribe to our newsletter for product management insights and AI tool updates</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>Schedule a Call</h3>
+                        <p>Book a free 30-minute consultation to discuss your product challenges.</p>
+                        <a href="https://calendly.com/testlooplabs/intro" target="_blank" class="btn btn-secondary">Schedule Now</a>
+                    </div>
+                    <div class="info-item">
+                        <h3>Email Us</h3>
+                        <p>For general inquiries:</p>
+                        <a href="mailto:hello@testlooplabs.com">hello@testlooplabs.com</a>
+                        <p style="margin-top: 15px;">For support:</p>
+                        <a href="mailto:support@testlooplabs.com">support@testlooplabs.com</a>
+                    </div>
+                    <div class="info-item">
+                        <h3>Office</h3>
+                        <p>535 Mission St<br>San Francisco, CA 94105</p>
+                        <p>Office Hours: Monday-Friday, 9AM-5PM PT</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Connect With Us</h3>
+                        <p>Follow us on social media for the latest updates.</p>
+                        <div class="social-links">
+                            <a href="https://linkedin.com/company/testlooplabs" target="_blank" class="social-link">In</a>
+                            <a href="https://twitter.com/testlooplabs" target="_blank" class="social-link">X</a>
+                            <a href="https://github.com/testlooplabs" target="_blank" class="social-link">G</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about working with us</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What is the typical engagement process?</div>
+                    <div class="faq-answer">
+                        <p>Our typical engagement starts with a free 30-minute consultation to understand your needs, followed by a proposal outlining our approach, timeline, and investment. Once approved, we begin with a discovery phase to deeply understand your product, users, and business goals before moving into strategy development and implementation support.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How much does it cost to work with TestLoop Labs?</div>
+                    <div class="faq-answer">
+                        <p>Our consulting engagements are customized based on your specific needs and goals. Projects typically range from $20,000 for focused engagements to $100,000+ for comprehensive transformations. We also offer ongoing advisory relationships starting at $5,000 per month. Contact us for a custom quote based on your specific requirements.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What size companies do you work with?</div>
+                    <div class="faq-answer">
+                        <p>We work with companies ranging from funded startups to established enterprises. Our clients typically have at least a functioning product in market and a dedicated product team. We've worked with companies from pre-Series A startups to public companies with thousands of employees.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer remote consulting?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we work with clients globally through a combination of video calls, collaborative tools, and occasional on-site visits when needed. Our remote engagements follow the same structured approach as our in-person work, with regular check-ins and deliverables to ensure alignment and progress.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What industries do you specialize in?</div>
+                    <div class="faq-answer">
+                        <p>We have particular expertise in B2B SaaS, consumer subscription products, marketplaces, and fintech. That said, our methodologies are applicable across industries, and we've successfully worked with companies in healthcare, education, e-commerce, media, and more.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How quickly can we see results?</div>
+                    <div class="faq-answer">
+                        <p>The timeline for results varies based on your starting point and the complexity of your product. Typically, our clients see initial results within 2-3 months, with more significant transformation happening over 6-12 months. We focus on quick wins early to build momentum while working on longer-term structural changes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TestLoop Labs</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tools.html">AI Tools</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services/product-led-growth.html">Product-Led Growth</a></li>
+                        <li><a href="services/ab-testing.html">A/B Testing</a></li>
+                        <li><a href="services/user-personas.html">User Personas</a></li>
+                        <li><a href="services/behavioral-science.html">Behavioral Science</a></li>
+                        <li><a href="services/agile-development.html">Agile Development</a></li>
+                        <li><a href="services/funnel-optimization.html">Funnel Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>AI Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="tools/snip-checker.html">Snip Checker</a></li>
+                        <li><a href="tools/user-flow-analyzer.html">User Flow Analyzer</a></li>
+                        <li><a href="contact.html">Request a Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://linkedin.com/company/testlooplabs" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://twitter.com/testlooplabs" target="_blank">Twitter</a></li>
+                        <li><a href="https://github.com/testlooplabs" target="_blank">GitHub</a></li>
+                        <li><a href="newsletter.html">Email Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TestLoop Labs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
