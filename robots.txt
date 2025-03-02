@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://testlooplabs.com/sitemap.xml
+
+# Disallow admin areas if you have any
+# Disallow: /admin/ 

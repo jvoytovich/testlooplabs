@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="400px" height="300px" viewBox="0 0 400 300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="300" fill="#f8f8f8" />
+    <polygon points="200,60 300,200 100,200" fill="#3DA8A3" opacity="0.8" />
+    <text x="200" y="155" font-family="Arial" font-size="16" text-anchor="middle" fill="#ffffff">Service 1</text>
+</svg> 
