@@ -76,6 +76,13 @@
             <div class="exhibition-item large fade-in">
               <div class="exhibition-content">
                 <h2>SnipChecker</h2>
+                <div class="product-logo-container">
+                  <img
+                    src="images/snipcheckerlogo.png"
+                    alt="SnipChecker Logo"
+                    class="product-logo"
+                  />
+                </div>
                 <p class="mb-4">
                   An advanced language and syntax detecting diff checker with AI
                   explanations. SnipChecker helps users understand the
@@ -97,7 +104,11 @@
                 >
               </div>
               <div class="exhibition-placeholder">
-                <div class="placeholder-text">SnipChecker</div>
+                <img
+                  src="images/snipcheckerlogo.png"
+                  alt="SnipChecker"
+                  class="placeholder-logo"
+                />
               </div>
             </div>
 
@@ -344,6 +355,13 @@
         background-color: transparent;
       }
 
+      .exhibition-content {
+        background-color: var(--main-bg-color);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+      }
+
       .exhibition-placeholder {
         background-color: var(--secondary-bg-color);
         aspect-ratio: 4/3;
@@ -358,6 +376,12 @@
         font-weight: 300;
         color: var(--text-color);
         opacity: 0.5;
+      }
+
+      .placeholder-logo {
+        max-width: 70%;
+        max-height: 70%;
+        object-fit: contain;
       }
 
       .philosophy-list {
@@ -389,6 +413,11 @@
 
         .exhibition-placeholder {
           order: -1;
+          aspect-ratio: 16/9;
+        }
+
+        .exhibition-content {
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
       }
     </style>
