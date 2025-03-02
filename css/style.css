@@ -179,6 +179,29 @@ p {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -394,16 +417,32 @@ textarea.form-control {
     background-color: var(--main-bg-color);
     flex-direction: column;
     align-items: center;
-    transition: height 0.3s ease;
+    transition: all 0.3s ease;
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 0;
   }
 
   .nav-links.active {
-    height: 300px;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 12px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-link {
-    margin: 1.5rem 0;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
   }
 
   .mobile-nav-toggle {

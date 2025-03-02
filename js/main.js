@@ -4,14 +4,47 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mobile Navigation Toggle
   const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
   const navLinks = document.querySelector(".nav-links");
+  const navItems = document.querySelectorAll(".nav-links li");
 
   if (mobileNavToggle) {
     mobileNavToggle.addEventListener("click", function () {
       navLinks.classList.toggle("active");
-      this.setAttribute(
-        "aria-expanded",
-        this.getAttribute("aria-expanded") === "true" ? "false" : "true"
-      );
+
+      const isExpanded = this.getAttribute("aria-expanded") === "true";
+      this.setAttribute("aria-expanded", !isExpanded);
+
+      // Add staggered animation to nav items
+      if (!isExpanded) {
+        navItems.forEach((item, index) => {
+          setTimeout(() => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+          }, 10);
+        });
+      } else {
+        navItems.forEach((item) => {
+          item.style.transitionDelay = "0s";
+        });
+      }
+    });
+
+    // Close mobile nav when clicking outside
+    document.addEventListener("click", function (e) {
+      if (
+        navLinks.classList.contains("active") &&
+        !e.target.closest(".nav-links") &&
+        !e.target.closest(".mobile-nav-toggle")
+      ) {
+        navLinks.classList.remove("active");
+        mobileNavToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close mobile nav when clicking on a link
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        mobileNavToggle.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
