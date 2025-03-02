@@ -74,11 +74,17 @@
         <div class="container">
           <div class="exhibition-large">
             <div class="exhibition-item large fade-in">
+              <div class="exhibition-placeholder">
+                <img
+                  src="images/snipchecker.png"
+                  alt="SnipChecker"
+                  class="placeholder-logo"
+                />
+              </div>
               <div class="exhibition-content">
-                <h2>SnipChecker</h2>
                 <div class="product-logo-container">
                   <img
-                    src="images/snipchecker.png"
+                    src="images/snipcheckerlogo.png"
                     alt="SnipChecker Logo"
                     class="product-logo"
                   />
@@ -103,16 +109,12 @@
                   >Visit SnipChecker.com</a
                 >
               </div>
-              <div class="exhibition-placeholder">
-                <img
-                  src="images/snipchecker.png"
-                  alt="SnipChecker"
-                  class="placeholder-logo"
-                />
-              </div>
             </div>
 
             <div class="exhibition-item large fade-in">
+              <div class="exhibition-placeholder">
+                <div class="placeholder-text">Dweller</div>
+              </div>
               <div class="exhibition-content">
                 <h2>Dweller</h2>
                 <p class="mb-4">
@@ -133,12 +135,12 @@
                   >Visit Dweller.app</a
                 >
               </div>
-              <div class="exhibition-placeholder">
-                <div class="placeholder-text">Dweller</div>
-              </div>
             </div>
 
             <div class="exhibition-item large fade-in">
+              <div class="exhibition-placeholder">
+                <div class="placeholder-text">FeasibleIQ</div>
+              </div>
               <div class="exhibition-content">
                 <h2>FeasibleIQ</h2>
                 <p class="mb-4">
@@ -160,12 +162,12 @@
                   >Visit FeasibleIQ.com</a
                 >
               </div>
-              <div class="exhibition-placeholder">
-                <div class="placeholder-text">FeasibleIQ</div>
-              </div>
             </div>
 
             <div class="exhibition-item large fade-in">
+              <div class="exhibition-placeholder">
+                <div class="placeholder-text">Product Wizardry</div>
+              </div>
               <div class="exhibition-content">
                 <h2>Product Wizardry</h2>
                 <p class="mb-4">
@@ -186,12 +188,12 @@
                   >Visit ProductWizardry.com</a
                 >
               </div>
-              <div class="exhibition-placeholder">
-                <div class="placeholder-text">Product Wizardry</div>
-              </div>
             </div>
 
             <div class="exhibition-item large fade-in">
+              <div class="exhibition-placeholder">
+                <div class="placeholder-text">Recaparize</div>
+              </div>
               <div class="exhibition-content">
                 <h2>Recaparize</h2>
                 <p class="mb-4">
@@ -211,9 +213,6 @@
                   rel="noopener noreferrer"
                   >Visit Recaparize.com</a
                 >
-              </div>
-              <div class="exhibition-placeholder">
-                <div class="placeholder-text">Recaparize</div>
               </div>
             </div>
           </div>
@@ -364,6 +363,7 @@
 
       .exhibition-content .product-logo-container {
         margin-bottom: 1.5rem;
+        margin-top: 0;
       }
 
       .exhibition-placeholder {
@@ -383,8 +383,8 @@
       }
 
       .placeholder-logo {
-        max-width: 50%;
-        max-height: 50%;
+        max-width: 70%;
+        max-height: 70%;
         object-fit: contain;
       }
 
@@ -415,13 +415,46 @@
           gap: 2rem;
         }
 
-        .exhibition-placeholder {
-          order: -1;
-          aspect-ratio: 16/9;
-        }
-
         .exhibition-content {
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          height: 0;
+          overflow: hidden;
+          background-color: var(--main-bg-color);
+          flex-direction: column;
+          align-items: center;
+          transition: all 0.3s ease;
+          border-bottom: 1px solid var(--border-color);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          padding: 0;
+          z-index: 1000;
+        }
+
+        .nav-links.active {
+          height: auto;
+          padding: 20px 0;
+        }
+
+        .nav-links li {
+          margin: 12px 0;
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links.active li {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .mobile-nav-toggle {
+          display: block;
         }
       }
     </style>

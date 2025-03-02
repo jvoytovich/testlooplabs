@@ -181,6 +181,7 @@ p {
   cursor: pointer;
   padding: 10px;
   z-index: 1001;
+  outline: none;
 }
 
 .mobile-nav-toggle span {
@@ -443,6 +444,7 @@ textarea.form-control {
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 0;
+    z-index: 1000;
   }
 
   .nav-links.active {
@@ -482,13 +484,14 @@ textarea.form-control {
     gap: 2rem;
   }
 
-  .exhibition-placeholder {
-    order: -1;
-    aspect-ratio: 16/9;
-  }
-
   .exhibition-content {
     padding: 1.5rem;
+    order: 2;
+  }
+
+  .exhibition-placeholder {
+    order: 1;
+    aspect-ratio: 16/9;
   }
 }
 
