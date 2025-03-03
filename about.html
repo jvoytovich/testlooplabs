@@ -107,7 +107,11 @@
             <div class="col-md-5 fade-in">
               <div class="founder-portrait">
                 <div class="portrait-placeholder">
-                  <span>Founder</span>
+                  <img
+                    src="images/favicon.svg"
+                    alt="Founder"
+                    class="founder-image"
+                  />
                 </div>
               </div>
             </div>
@@ -347,6 +351,12 @@
         font-size: 1.5rem;
         color: var(--text-color);
         opacity: 0.5;
+      }
+
+      .founder-image {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
       }
 
       .approach-items {
