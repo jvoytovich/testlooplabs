@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Background Animation Canvas -->
+    <!-- Canvas moved to hero section -->
+
     <!-- Header & Navigation -->
     <header class="header">
       <div class="container header-inner">
@@ -47,7 +50,9 @@
           <ul class="nav-links" id="nav-links">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="services.html" class="nav-link">Services</a></li>
+            <!-- Hidden until more products are added
             <li><a href="products.html" class="nav-link">Products</a></li>
+            -->
             <li><a href="about.html" class="nav-link">About</a></li>
             <li><a href="contact.html" class="nav-link">Contact</a></li>
           </ul>
@@ -57,7 +62,10 @@
 
     <main>
       <!-- Hero Section -->
-      <section class="hero">
+      <section class="hero with-animation-bg">
+        <!-- Background Animation Canvas -->
+        <canvas id="growth-animation" class="background-canvas"></canvas>
+
         <div class="container">
           <div class="hero-content fade-in">
             <h1>Elevate User Engagement & Funnel Conversions</h1>
@@ -70,9 +78,11 @@
               <a href="contact.html" class="btn"
                 >Schedule a Free Consultation</a
               >
+              <!-- Hidden until more products are added
               <a href="products.html" class="btn btn-accent"
                 >Explore Our AI Products</a
               >
+              -->
             </div>
           </div>
         </div>
@@ -101,11 +111,92 @@
         </div>
       </section>
 
-      <!-- Consulting Services Preview -->
+      <!-- Companies Worked With Section -->
       <section
-        class="section"
+        class="section companies-section"
         style="background-color: var(--secondary-bg-color)"
       >
+        <div class="container">
+          <h2 class="text-center fade-in">
+            Experience Across Leading Companies
+          </h2>
+          <p class="text-center mb-4 fade-in">
+            Prior to establishing TestLoop Labs, I've had the privilege of
+            contributing to product innovation at these organizations.
+          </p>
+        </div>
+
+        <div class="logo-scroll-container">
+          <div class="logo-scroll">
+            <div class="logo-scroll-content">
+              <img
+                src="images/brands/FourQ_Logo.png"
+                alt="FourQ"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/gartner.svg"
+                alt="Gartner"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/priceline.png"
+                alt="Priceline"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/spectrum.png"
+                alt="Spectrum"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/webmd.png"
+                alt="WebMD"
+                class="client-logo"
+              />
+              <!-- Duplicate logos for smooth infinite scrolling -->
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/FourQ_Logo.png"
+                alt="FourQ"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/gartner.svg"
+                alt="Gartner"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/priceline.png"
+                alt="Priceline"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/spectrum.png"
+                alt="Spectrum"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+              <img
+                src="images/brands/webmd.png"
+                alt="WebMD"
+                class="client-logo"
+              />
+              <span class="brand-separator">/</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Consulting Services Preview -->
+      <section class="section" style="background-color: var(--main-bg-color)">
         <div class="container">
           <h2 class="fade-in">Consulting Services</h2>
 
@@ -147,56 +238,6 @@
             <a href="services.html" class="btn"
               >Learn More About Our Services</a
             >
-          </div>
-        </div>
-      </section>
-
-      <!-- AI Product Teaser -->
-      <section class="section">
-        <div class="container">
-          <h2 class="fade-in">AI-Driven Products</h2>
-          <p class="text-center mb-5 fade-in">
-            A curated collection of tools exploring the boundaries of product
-            innovation and artificial intelligence.
-          </p>
-
-          <div class="exhibition">
-            <div class="exhibition-item fade-in">
-              <h3>SnipChecker</h3>
-              <div class="product-logo-container">
-                <img
-                  src="images/snipchecker.png"
-                  alt="SnipChecker Logo"
-                  class="product-logo"
-                />
-              </div>
-              <p>
-                Advanced language and syntax detecting diff checker with AI
-                explanations.
-              </p>
-              <a href="https://snipchecker.com" class="btn"
-                >Visit SnipChecker</a
-              >
-            </div>
-
-            <div class="exhibition-item fade-in">
-              <h3>Dweller</h3>
-              <p>
-                Home maintenance and inventory keeper with AI-powered
-                maintenance reminders.
-              </p>
-              <a href="https://dweller.app" class="btn">Visit Dweller</a>
-            </div>
-
-            <div class="exhibition-item fade-in">
-              <h3>FeasibleIQ</h3>
-              <p>Market feasibility insights powered by AI.</p>
-              <a href="https://feasibleiq.com" class="btn">Visit FeasibleIQ</a>
-            </div>
-          </div>
-
-          <div class="text-center mt-5 fade-in">
-            <a href="products.html" class="btn">View All Products</a>
           </div>
         </div>
       </section>
@@ -294,38 +335,12 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/analytics.js"></script>
+    <script src="js/growth-animation.js"></script>
 
     <style>
       /* Additional styles for the homepage */
-      .exhibition-item {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-between;
-      }
 
-      .exhibition-item h3 {
-        margin-bottom: 0.5rem;
-      }
-
-      .exhibition-item .product-logo-container {
-        margin: 0.5rem 0 1rem;
-        height: auto;
-        min-height: 45px;
-      }
-
-      .exhibition-item .product-logo {
-        max-height: 42px;
-      }
-
-      .exhibition-item p {
-        flex-grow: 1;
-        margin-bottom: 1.5rem;
-      }
-
-      .exhibition-item .btn {
-        align-self: flex-start;
-      }
+      /* Companies section styles moved to main CSS file */
 
       @media (max-width: 768px) {
         .mobile-nav-toggle {
