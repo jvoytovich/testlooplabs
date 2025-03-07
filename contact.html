@@ -47,9 +47,14 @@
           <ul class="nav-links" id="nav-links">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="services.html" class="nav-link">Services</a></li>
+            <!-- Hidden until more products are added
             <li><a href="products.html" class="nav-link">Products</a></li>
+            -->
             <li><a href="about.html" class="nav-link">About</a></li>
             <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="#schedule" class="nav-link schedule-btn">Schedule Now</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -90,10 +95,20 @@
                   </p>
                 </div>
 
-                <div class="contact-method">
+                <div class="contact-method" id="schedule">
                   <h3>Schedule a Call</h3>
                   <p>Book a 30-minute consultation directly on our calendar.</p>
-                  <a href="#" class="btn">Schedule Now</a>
+                  <div class="calendly-inline-widget">
+                    <!-- Calendly inline widget -->
+                    <iframe
+                      src="https://calendly.com/jacvoyt/30min"
+                      width="100%"
+                      height="630"
+                      frameborder="0"
+                      scrolling="no"
+                    >
+                    </iframe>
+                  </div>
                 </div>
 
                 <div class="contact-method">
@@ -292,6 +307,12 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/form-handler.js"></script>
+    <!-- Calendly Widget JS -->
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
 
     <style>
       /* Additional styles for the Contact page */
@@ -324,6 +345,16 @@
 
       .contact-method a:hover {
         color: var(--accent-color);
+      }
+
+      /* Calendly Widget Styling */
+      .calendly-inline-widget {
+        min-width: 320px;
+        margin-top: 1rem;
+      }
+
+      #schedule {
+        margin-bottom: 4rem;
       }
 
       .visually-hidden {
