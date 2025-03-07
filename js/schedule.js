@@ -15,16 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "contact.html#schedule";
   }
 
-  // Add event listeners to all schedule buttons
+  // Add event listeners to all schedule buttons (if they exist)
   if (scheduleNavBtn) {
     scheduleNavBtn.addEventListener("click", handleScheduleClick);
+    console.log("Schedule nav button initialized");
   }
 
   if (scheduleHeroBtn) {
     scheduleHeroBtn.addEventListener("click", handleScheduleClick);
+    console.log("Schedule hero button initialized");
   }
 
   if (scheduleCTABtn) {
     scheduleCTABtn.addEventListener("click", handleScheduleClick);
+    console.log("Schedule CTA button initialized");
   }
+
+  console.log("Schedule.js loaded");
 });
