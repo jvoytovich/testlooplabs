@@ -55,6 +55,11 @@
             -->
             <li><a href="about.html" class="nav-link">About</a></li>
             <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="#" class="nav-link schedule-btn" id="schedule-nav-btn"
+                >Schedule Now</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
@@ -75,7 +80,7 @@
               growth.
             </p>
             <div class="hero-buttons">
-              <a href="contact.html" class="btn"
+              <a href="#" class="btn schedule-btn" id="schedule-hero-btn"
                 >Schedule a Free Consultation</a
               >
               <!-- Hidden until more products are added
@@ -254,7 +259,10 @@
               Let's discuss how TestLoop Labs can help you achieve your business
               goals.
             </p>
-            <a href="contact.html" class="btn btn-accent"
+            <a
+              href="#"
+              class="btn btn-accent schedule-btn"
+              id="schedule-cta-btn"
               >Schedule a Consultation</a
             >
           </div>
@@ -332,10 +340,27 @@
       </div>
     </footer>
 
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="calendar-modal">
+      <div class="calendar-modal-content">
+        <span class="close-calendar" id="close-calendar">&times;</span>
+        <div id="calendly-container" class="calendly-inline-widget">
+          <!-- Calendly inline widget will be loaded here -->
+          <iframe
+            id="calendly-iframe"
+            class="calendar-iframe"
+            src=""
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/analytics.js"></script>
     <script src="js/growth-animation.js"></script>
+    <script src="js/schedule.js"></script>
 
     <style>
       /* Additional styles for the homepage */

@@ -286,6 +286,65 @@ p {
   color: var(--main-bg-color);
 }
 
+/* Schedule Button Styles */
+.schedule-btn {
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link.schedule-btn {
+  color: var(--accent-color);
+}
+
+.nav-link.schedule-btn:after {
+  background-color: var(--accent-color);
+}
+
+/* Calendar Modal Styles */
+.calendar-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+}
+
+.calendar-modal-content {
+  position: relative;
+  background-color: var(--main-bg-color);
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-iframe {
+  width: 100%;
+  height: 650px;
+  border: none;
+}
+
+.close-calendar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close-calendar:hover {
+  color: var(--accent-color);
+}
+
 /* Gallery Style Display for Services and Products */
 .gallery {
   display: grid;
@@ -541,6 +600,15 @@ textarea.form-control {
 
   .logo-scroll-content {
     animation: scrollLogos 20s linear infinite;
+  }
+
+  .calendar-modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+
+  .calendar-iframe {
+    height: 580px;
   }
 }
 
