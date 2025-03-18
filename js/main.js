@@ -1,4 +1,4 @@
-// TestLoop Labs Website - Main JavaScript
+// Testloop Labs Website - Main JavaScript
 
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile Navigation Toggle

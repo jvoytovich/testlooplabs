@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", setCanvasDimensions);
 
   // Particle configuration
-  const particleCount = 80; // Reduced for better performance
+  const particleCount = 120; // Increased for more density
   const baseRadius = 1;
   const maxRadius = 3;
-  const connectionDistance = 120;
+  const connectionDistance = 150; // Increased for more connections
 
   // Mouse position (default center)
   let mouseX = canvas.width / 2;
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Visual properties
       this.radius = baseRadius + Math.random() * 2;
       this.originalRadius = this.radius;
-      this.opacity = 0.1 + Math.random() * 0.4;
+      this.opacity = 0.2 + Math.random() * 0.3; // Adjusted for dark grey
 
       // Growth properties
       this.growing = false;
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(61, 168, 163, ${this.opacity})`;
+      ctx.fillStyle = `rgba(40, 40, 40, ${this.opacity})`; // Changed to dark grey
       ctx.fill();
     }
   }
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Draw connections between particles
   function drawConnections() {
-    ctx.strokeStyle = "rgba(61, 168, 163, 0.15)";
+    ctx.strokeStyle = "rgba(40, 40, 40, 0.15)"; // Changed to dark grey
     ctx.lineWidth = 0.5;
 
     for (let i = 0; i < particles.length; i++) {
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (distance < connectionDistance) {
           // Opacity based on distance
           const opacity = 1 - distance / connectionDistance;
-          ctx.strokeStyle = `rgba(61, 168, 163, ${opacity * 0.2})`;
+          ctx.strokeStyle = `rgba(40, 40, 40, ${opacity * 0.3})`; // Changed to dark grey and increased opacity
 
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);

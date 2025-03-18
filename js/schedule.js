@@ -1,5 +1,5 @@
 /**
- * Scheduling functionality for TestLoop Labs
+ * Scheduling functionality for Testloop Labs
  * Redirects to contact page with Calendly scheduling
  */
 
