@@ -128,30 +128,47 @@
               <h2>Send a Message</h2>
               <form class="contact-form" id="contact-form">
                 <div class="form-group">
+<<<<<<< Updated upstream
                   <label for="name" class="visually-hidden">Name</label>
+=======
+                  <label for="name">Full Name</label>
+>>>>>>> Stashed changes
                   <input
                     type="text"
                     id="name"
                     name="name"
+<<<<<<< Updated upstream
                     class="form-control"
                     placeholder="Name"
+=======
+                    placeholder="Enter your name"
+>>>>>>> Stashed changes
                     required
                   />
                 </div>
 
                 <div class="form-group">
+<<<<<<< Updated upstream
                   <label for="email" class="visually-hidden">Email</label>
+=======
+                  <label for="email">Email Address</label>
+>>>>>>> Stashed changes
                   <input
                     type="email"
                     id="email"
                     name="email"
+<<<<<<< Updated upstream
                     class="form-control"
                     placeholder="Email"
+=======
+                    placeholder="Enter your email"
+>>>>>>> Stashed changes
                     required
                   />
                 </div>
 
                 <div class="form-group">
+<<<<<<< Updated upstream
                   <label for="company" class="visually-hidden"
                     >Company (Optional)</label
                   >
@@ -161,6 +178,15 @@
                     name="company"
                     class="form-control"
                     placeholder="Company (Optional)"
+=======
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="What's this about?"
+                    required
+>>>>>>> Stashed changes
                   />
                 </div>
 
@@ -169,8 +195,13 @@
                   <textarea
                     id="message"
                     name="message"
+<<<<<<< Updated upstream
                     class="form-control"
                     placeholder="Message"
+=======
+                    rows="5"
+                    placeholder="Tell us about your project or inquiry..."
+>>>>>>> Stashed changes
                     required
                   ></textarea>
                 </div>
@@ -404,6 +435,100 @@
 
         .faq-grid {
           grid-template-columns: 1fr;
+        }
+      }
+
+      /* Replace the existing contact form styles in the <style> section */
+      .contact-form-container {
+        background-color: var(--secondary-bg-color);
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-group label {
+        font-weight: 500;
+        color: var(--text-color);
+        font-size: 0.95rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background-color: var(--main-bg-color);
+        color: var(--text-color);
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .contact-form .btn {
+        margin-top: 0.5rem;
+        width: 100%;
+        padding: 0.875rem;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      /* Add hover and focus states */
+      .form-group input:hover,
+      .form-group textarea:hover {
+        border-color: var(--accent-color);
+      }
+
+      /* Add form validation styles */
+      .form-group input:invalid:not(:placeholder-shown),
+      .form-group textarea:invalid:not(:placeholder-shown) {
+        border-color: #e74c3c;
+      }
+
+      .form-group input:valid:not(:placeholder-shown),
+      .form-group textarea:valid:not(:placeholder-shown) {
+        border-color: #2ecc71;
+      }
+
+      /* Add loading state for submit button */
+      .contact-form .btn[disabled] {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .contact-form-container {
+          padding: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+          font-size: 16px; /* Prevents zoom on mobile */
         }
       }
     </style>
