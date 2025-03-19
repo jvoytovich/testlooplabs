@@ -126,60 +126,39 @@
 
             <div class="contact-form-container fade-in">
               <h2>Send a Message</h2>
-              <form class="contact-form" id="contact-form">
+              <form
+                action="https://formspree.io/f/mldjdqkw"
+                method="POST"
+                class="contact-form"
+              >
                 <div class="form-group">
-                  <label for="name" class="visually-hidden">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-control"
-                    placeholder="Name"
-                    required
-                  />
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required />
                 </div>
 
                 <div class="form-group">
-                  <label for="email" class="visually-hidden">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-control"
-                    placeholder="Email"
-                    required
-                  />
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required />
                 </div>
 
                 <div class="form-group">
-                  <label for="company" class="visually-hidden"
-                    >Company (Optional)</label
-                  >
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    class="form-control"
-                    placeholder="Company (Optional)"
-                  />
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" required />
                 </div>
 
                 <div class="form-group">
-                  <label for="message" class="visually-hidden">Message</label>
+                  <label for="message">Message</label>
                   <textarea
                     id="message"
                     name="message"
-                    class="form-control"
-                    placeholder="Message"
+                    rows="5"
                     required
                   ></textarea>
                 </div>
 
-                <div class="form-group">
-                  <button type="submit" class="btn btn-accent">
-                    Send Message
-                  </button>
-                </div>
+                <button type="submit" class="btn btn-accent">
+                  Send Message
+                </button>
               </form>
             </div>
           </div>
